@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Specificity Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div>
+        <h1>Instructions</h1>
+        <ul>
+            <li>Change the following sections text color according to their paranthesis value.</li>
+            <li>Do so without changing or manipulating the DOM (renaming classes, IDs...)</li>
+            <li>Do not use !important</li>
+            <li>Use the supplied styles.css file to insert your CSS</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div id="main">
+        <p class="primary">Happy Specificity Games! And may the odds be ever in your favor! (pink)</p>
+        <div>
+            <div id="story" class="stories">
+                <h3>The Hunter (green)</h3>
+                <p class="primary">Wolf in sheep's clothing. (grey)</p>
+                <p>Michelangelo's Pizza - Best Pizza. (orange)</p>
+                <p>Red Riding Hood (Red, duh)</p>
+                <ul>
+                    <li>If a tree falls in a forest and no one is around to hear it, does it make a sound? (darkgreen)</li>
+                    <li>You must not lose faith in humanity. Humanity is like an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty (darkblue)</li>
+                    <li class="red" id="pink">Hansel and Gretel - WITCH HUNTERS?! (teal)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
