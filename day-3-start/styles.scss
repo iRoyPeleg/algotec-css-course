@@ -1,0 +1,351 @@
+@import "variables";
+@import "functions";
+
+html {
+  background: #000;
+  margin: 0;
+  height: 100%;
+  font-size: 7.7px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+
+main {
+  background: url("images/stars-repeating-teal.jpg") center top repeat;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* -------- Nav -------- */
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  text-align: right;
+  transition: background 300ms ease-in-out;
+
+  &.visible-nav {
+    background: #07090b;
+  }
+}
+
+
+.page-logo {
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  img {
+    height: 100%;
+  }
+}
+
+.nav-button {
+  padding: 10px 30px;
+  margin: 30px 20px;
+  outline: none;
+  background: transparent;
+  border: 1px solid transparentize($default-font-color, 0.5);
+  color: white;
+  border-radius: 6px;
+  text-transform: uppercase;
+
+  font: {
+    size: 20px;
+    family: 'Rajdhani', sans-serif;
+    weight: 700;
+  }
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: box-shadow 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 20px 5px $default-font-color;
+  }
+
+  &:active {
+    color: $default-font-color;
+  }
+}
+
+.call-to-action {
+  background: $default-font-color;
+  color: white;
+  transition: all 180ms ease-in-out;
+}
+
+.call-to-action:hover {
+  background: white;
+  color: $default-font-color;
+}
+
+.call-to-action:active {
+  background: white;
+  color: black;
+  transition: none;
+}
+
+/* -------- HEADER -------- */
+
+#header {
+  height: 550px;
+  background-image: url("images/header-space.png");
+  display: block;
+  background-position: center 60%;
+  background-size: cover;
+  position: relative;
+}
+
+.slogan {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-family: 'Rajdhani', sans-serif;
+  color: white;
+  white-space: nowrap;
+  font-size: 72px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px $default-font-color, 0 0 40px $default-font-color;
+  transform: translate(-50%, -50%);
+}
+
+/* -------- Planets -------- */
+
+.planets-container {
+  text-align: center;
+
+  h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+  }
+}
+
+.planet-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  margin: 20px 50px;
+  border-radius: 2px;
+  border: 1px solid #2570a7;
+  padding: 20px 10px;
+  background: rgba(12, 42, 64, 0.48);
+  color: white;
+}
+
+.planet-image {
+  position: relative;
+  height: 175px;
+
+  img {
+    left: 50%; /*IE needs this*/
+    position: absolute;
+    transform: translateX(-50%);
+    height: 100%;
+  }
+}
+
+.planet-description {
+  text-align: left;
+}
+
+.planet-name {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* -------- Headquarters -------- */
+
+.headquarters {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.headquarters-description {
+  margin-right: 50px;
+  text-align: left;
+  font-family: 'Rajdhani', sans-serif;
+  display: inline-block;
+  color: white;
+  vertical-align: top;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+
+  h2,
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+
+/* -------- Earth Animation -------- */
+
+.earth-animation {
+  display: inline-block;
+  position: relative;
+  height: 400px;
+  width: 600px;
+  vertical-align: top;
+}
+
+.earth-globe {
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @extend %globes;
+}
+
+.moon-globe {
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: lunar-spin 20s linear infinite;
+  z-index: 1;
+  transform: translateX(-50%);
+  transition: all 150ms linear;
+  @extend %globes;
+}
+
+%globes img {
+  height: 100%;
+}
+
+@keyframes lunar-spin {
+  0% {
+    z-index: 1;
+    transform: translate(-50%, 0%);
+  }
+
+  24% {
+    z-index: 1;
+    transform: translate(-290%, -50%);
+  }
+
+  25% {
+    z-index: -1;
+    transform: translate(-296%, -50%);
+  }
+
+  50% {
+    z-index: -1;
+    transform: translate(-50%, -100%);
+  }
+
+  74% {
+    z-index: -1;
+    transform: translate(190%, -50%);
+  }
+
+  75% {
+    z-index: 1;
+    transform: translate(196%, -50%);
+  }
+
+  100% {
+    z-index: 1;
+    transform: translate(-50%, 0%);
+  }
+}
+
+/* Solar System */
+
+.solar-system {
+  background: {
+    color: #000;
+    image: url("images/nightsky.png");
+    size: cover;
+  }
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.solar-planets-container {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+  padding: 100px 0;
+}
+
+.solar-planet-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 100px;
+  color: white;
+}
+
+.solar-planet-name {
+  font-family: "Rajdhani", sans-serif;
+  position: absolute;
+  font-size: 30px;
+  top: 0;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.solar-planet-image {
+  position: relative;
+  height: 75px;
+
+  img {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 100%;
+  }
+}
+
+.sun-container {
+  display: inline-block;
+  vertical-align: middle;
+
+  .solar-planet-container {
+    width: 800px;
+    margin-left: -600px;
+  }
+
+  .solar-planet-image {
+    height: 800px;
+  }
+}
+
+.sun-glow {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 30px #fefefe, 0 0 250px 50px #ffb503, inset 0 0 50px 10px #fdfdef;
+  background-color: rgba(255, 165, 0, 0.5);
+  height: 745px;
+  width: 750px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@each $planet, $sizeMultiplier in $planets {
+  ##{$planet} .solar-planet-image {
+    height: 10px * ($sizeMultiplier / 10000);
+  }
+}

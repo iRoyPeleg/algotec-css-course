@@ -1,0 +1,9 @@
+// Convert pixel measurements in 2MP graphic design to 'em' units
+@function MP2-px-to-em($pxSize, $context: 7.7) {
+  @return round($pxSize/$context * 100) / 100 + em;
+}
+
+// Convert pixel measurements in 2MP graphic design to 'rem' units
+@function MP2-px-to-rem($pxSize, $context: 7.7) {
+  @return round($pxSize/$context * 100) / 100 + rem;
+}
