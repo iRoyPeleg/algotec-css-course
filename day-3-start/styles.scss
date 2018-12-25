@@ -1,5 +1,6 @@
 @import "variables";
 @import "functions";
+@import "themes";
 
 html {
   background: #000;
@@ -57,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30px 20px;
   outline: none;
   background: transparent;
-  border: 1px solid transparentize($default-font-color, 0.5);
+  border: 1px solid transparentize(#0094ff, 0.5);
   color: white;
   border-radius: 6px;
   text-transform: uppercase;
@@ -72,29 +73,29 @@ h1, h2, h3, h4, h5, h6 {
   transition: box-shadow 180ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 20px 5px $default-font-color;
+    box-shadow: 0 0 20px 5px #0094ff;
   }
 
   &:active {
-    color: $default-font-color;
+    color: #0094ff;
   }
 }
 
 .call-to-action {
-  background: $default-font-color;
+  background: #0094ff;
   color: white;
   transition: all 180ms ease-in-out;
-}
 
-.call-to-action:hover {
-  background: white;
-  color: $default-font-color;
-}
+  &:hover {
+    background: white;
+    color: #0094ff;
+  }
 
-.call-to-action:active {
-  background: white;
-  color: black;
-  transition: none;
+  &:active {
+    background: white;
+    color: black;
+    transition: none;
+  }
 }
 
 /* -------- HEADER -------- */
@@ -118,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 72px;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0 0 20px $default-font-color, 0 0 40px $default-font-color;
+  text-shadow: 0 0 20px #0094ff, 0 0 40px #0094ff;
   transform: translate(-50%, -50%);
 }
 
@@ -346,6 +347,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @each $planet, $sizeMultiplier in $planets {
   ##{$planet} .solar-planet-image {
-    height: 10px * ($sizeMultiplier / 10000);
+    height: round(($sizeMultiplier / 1000)) + px;
   }
 }
