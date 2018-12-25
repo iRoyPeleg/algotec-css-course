@@ -1,0 +1,71 @@
+@import "variables";
+
+$themes: ();
+
+$themes: map_merge($themes, (
+        "blue": (
+                text-color: $color-primary-blue,
+                button-background: transparent,
+                button-text: white,
+                button-border: $color-primary-blue,
+                button-shadow-color: $color-primary-blue,
+                call-to-action-background: $color-primary-blue,
+                call-to-action-text: white,
+                targets-background: transparentize($color-primary-blue, 0.85),
+                header-background-image: url("images/header-space.png")
+        )
+));
+
+
+$themes: map_merge($themes, (
+        "red": (
+                text-color: $color-primary-red,
+                button-background: transparent,
+                button-text: white,
+                button-border: $color-primary-red,
+                button-shadow-color: $color-primary-red,
+                call-to-action-background: $color-primary-red,
+                call-to-action-text: white,
+                targets-background: transparentize($color-primary-red, 0.85),
+                header-background-image: url("images/header-space-red.png")
+        )
+));
+
+@mixin themify_prop($cssProperty, $themeVar, $important:false) {
+  @each $themeName, $themeMap in $themes {
+    // :host-context(html.#{$themeName}#{$hostContext}) & {
+    $value: map_get($themeMap, $themeVar);
+    @if ($value and $value!="") {
+      html.#{$themeName} & {
+        #{$cssProperty}: $value if($important, !important, null);
+      }
+    }
+  }
+}
+
+@mixin themify_boxshadow($colorVar, $offsetX: 0, $offsetY: 0, $blurRadius: 0.2em, $spread: null, $isInset: false, $important: false) {
+
+  @each $themeName, $themeMap in $themes {
+    $value: map_get($themeMap, $colorVar);
+    @if ($value and $value!="") {
+      $_inset: if($isInset, inset, null);
+      $_important: if($important, !important, null);
+      html.#{$themeName} & {
+        box-shadow: $_inset $offsetX $offsetY $blurRadius $spread $value $_important;
+      }
+    }
+  }
+}
+
+@mixin themify_textshadow($colorVar, $offsetX: 0, $offsetY: 0, $blurRadius: 0.2em, $important: false) {
+
+  @each $themeName, $themeMap in $themes {
+    $value: map_get($themeMap, $colorVar);
+    @if ($value and $value!="") {
+      $_important: if($important, !important, null);
+      html.#{$themeName} & {
+        text-shadow: $offsetX $offsetY $blurRadius $value $_important;
+      }
+    }
+  }
+}
