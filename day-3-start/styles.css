@@ -72,12 +72,10 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   transition: all 180ms ease-in-out;
 }
-
 .call-to-action:hover {
   background: white;
   color: #0094ff;
 }
-
 .call-to-action:active {
   background: white;
   color: black;
@@ -310,35 +308,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mercury .solar-planet-image {
-  height: 4.879px;
+  height: 5px;
 }
 
 #venus .solar-planet-image {
-  height: 12.104px;
+  height: 12px;
 }
 
 #earth .solar-planet-image {
-  height: 12.756px;
+  height: 13px;
 }
 
 #mars .solar-planet-image {
-  height: 6.794px;
+  height: 7px;
 }
 
 #jupiter .solar-planet-image {
-  height: 142.98px;
+  height: 143px;
 }
 
 #saturn .solar-planet-image {
-  height: 120.54px;
+  height: 121px;
 }
 
 #uranus .solar-planet-image {
-  height: 51.12px;
+  height: 51px;
 }
 
 #neptune .solar-planet-image {
-  height: 49.53px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */
