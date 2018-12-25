@@ -19,3 +19,14 @@ window.addEventListener('scroll', (e) => {
         ticking = true;
     }
 });
+
+function changeTheme() {
+    const classList = document.querySelector('html').classList;
+    if (classList.contains('blue')) {
+        classList.remove('blue');
+        classList.add('red');
+    } else {
+        classList.add('blue');
+        classList.remove('red');
+    }
+}
